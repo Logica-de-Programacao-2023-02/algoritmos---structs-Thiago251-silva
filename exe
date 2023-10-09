@@ -1,0 +1,47 @@
+package main
+
+import "fmt"
+
+//Crie uma struct chamada Livro com os campos "título"
+//"autor" e "ano de publicação".
+//Escreva uma função que receba um Livro como parâmetro e imprima suas informações.
+
+type Livro struct {
+	Titulo string
+	Autor  string
+	ano    int
+}
+
+func main() {
+	l := Livro{Titulo: "pequeno", Autor: "Thiago", ano: 2022}
+	imprimeLivro(l)
+}
+
+func imprimeLivro(l Livro) {
+	fmt.Println("Titulo: ", l.Titulo)
+	fmt.Println("Autor: ", l.Autor)
+	fmt.Println("Ano: ", l.ano)
+
+}
+
+// Crie uma struct chamada Aluno com os campos "nome"
+// "idade" e "notas". O campo
+// "notas" deve ser um slice de float64. Escreva uma função que receba um Aluno como
+// parâmetro e calcule a média das suas notas.
+type Aluno struct {
+	nome  string
+	idade int
+	notas []float64{9.0, 7.0, 8.2}
+}
+fmt.println(calcularmedia(Aluno))
+
+func main() {
+
+}
+func calcularmedia(a Aluno) float64 {
+var somatorio float64
+	for _, nota := range a.notas{
+		somatorio += nota
+	}
+	return somatorio/ float64(len(a.notas))
+}
